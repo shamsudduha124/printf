@@ -3,20 +3,17 @@
 #include <stdio.h>
 
 /**
- * _printf - print fomated outpt
- * @format: fomat str containin charactas and specifier
- *
- * Descriptn: Ths functn prints fomated otput basd on the fomat
- * string prided. It calls the get_print() function to determine which
- * printing function to use for each conversion specifier.
- *
- * Return: The number of characters printed (excluding the null byte
- * used to end output to strings),  error.
+ * _printf - produces output according to a format
+ * @format: format string containing the characters and the specifiers
+ * Description: this function will call the get_print() function that will
+ * determine which printing function to call depending on the conversion
+ * specifiers contained into fmt
+ * Return: length of the formatted output string
  */
 int _printf(const char *format, ...)
 {
-	int (*shamzfunc)(va_list, flags_t *);
-	const char *shamz;
+	int (*pfunc)(va_list, flags_t *);
+	const char *p;
 	va_list arguments;
 	flags_t flags = {0, 0, 0};
 
@@ -27,31 +24,27 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (shamz = format; *shamz; shamz++)
+	for (p = format; *p; p++)
 	{
-		switch (*shamz)
+		if (*p == '%')
 		{
-		case '%':
-			shamz++;
-			if (*shamz == '%')
+			p++;
+			if (*p == '%')
 			{
 				count += _putchar('%');
 				continue;
 			}
-			while (get_flag(*shamz, &flags))
-				shamz++;
-			shamzfunc = get_print(*shamz);
-			count += (shamzfunc)
-				? shamzfunc(arguments, &flags)
-				: _printf("%%%c", *shamz);
-			break;
-
-		default:
-			count += _putchar(*shamz);
-			break;
-		}
+			while (get_flag(*p, &flags))
+				p++;
+			pfunc = get_print(*p);
+			count += (pfunc)
+				? pfunc(arguments, &flags)
+				: _printf("%%%c", *p);
+		} else
+			count += _putchar(*p);
 	}
 	_putchar(-1);
 	va_end(arguments);
 	return (count);
+
 }
