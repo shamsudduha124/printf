@@ -1,7 +1,6 @@
 #include "main.h"
 #include <limits.h>
 #include <stdio.h>
-
 /**
  * _printf - produces output according to a format
  * @format: format string containing the characters and the specifiers
@@ -16,9 +15,7 @@ int _printf(const char *format, ...)
 	const char *p;
 	va_list arguments;
 	log_t flags = {0, 0, 0};
-
 	register int count = 0;
-
 	va_start(arguments, format);
 	if (!format || (format[0] == '%' && !format[1]))
 	{
@@ -46,7 +43,6 @@ int _printf(const char *format, ...)
 			pfunc = get_print(*p);
 			count += (pfunc) ? pfunc(arguments, &flags) : _printf("%%%c", *p);
 			break;
-
 		default:
 			count += _putchar(*p);
 			break;
