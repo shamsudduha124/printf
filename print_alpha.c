@@ -10,12 +10,12 @@
  */
 int print_string(va_list l, log_t *f)
 {
-	char *stress = va_arg(l, char *);
+	char *s = va_arg(l, char *);
 
 	(void)f;
 
-	stress = stress ? stress : "(null)";
-    return (_puts(stress));
+	s = s ? s : "(null)";
+    return (_puts(s));
 }
 
 int print_char(va_list l, log_t *f)
