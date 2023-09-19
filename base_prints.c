@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * print_hex - prints a number in hexadecimal base,
+ * print_hex -prints a number in hexadecimal base,
  * in lowercase
  * @l: va_list arguments from _printf
  * @f: pointer to the struct flags that determines
- * if a flag is passed to _printf
+ * if aflag is passed to_printf
  * Description: the function calls convert() which in turns converts the input
- * Return: the number of char printed
+ * numb into the corre base and returns it as a string
+ * Return: the numberof char printed
  */
-
 int print_hexagon(va_list l, log_t *f)
 {
 	unsigned int number = va_arg(l, unsigned int);
@@ -22,13 +22,12 @@ int print_hexagon(va_list l, log_t *f)
 }
 
 /**
- * print_hex_big - Print a number in hexadecimal base (uppercase).
+ * print_hex_big - prints a number in hexadecimal base,
+ * in uppercase
  * @l: va_list arguments from _printf
- * @f: pointer to the struct flags that determines
- * if a flag is passed to _printf
+ * @f: pointer to the struct that determines
  * Description: the function calls convert() which in turns converts the input
- * uppercase letters (A-F). It utilizes the convert() function to convert
- * Return: The number of characters printed.
+ * Return: the number of char printed
  */
 int print_hexagon_big(va_list l, log_t *f)
 {
