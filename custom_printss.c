@@ -70,7 +70,7 @@ int print_rot13(va_list l, log_t *f)
 {
 	int i, j;
 	char ront13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char RONTT13[] = "vwxyzabcdefghijklmnopqrstuVWXYZABCDEFGHIJKLMNOPQRSTU";
+	char RONTT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(l, char *);
 
 	(void)f;
