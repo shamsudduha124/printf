@@ -1,9 +1,13 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdlib.h>
 #include <stdarg.h>
+
 /**
  * struct flags - Structure containing flags to enable specific formatting options
  * @pl: for '+'
- * @spc: for dash
+ * @spc: for ' '
  * @ash: for '#'
  */
 typedef struct flags
@@ -12,6 +16,7 @@ typedef struct flags
 	int spc;
 	int ash;
 } log_t;
+
 /**
  * struct printHandler - struct to choose the right function depending
  * on the format specifier passed to _printf()
@@ -56,7 +61,7 @@ int print_char(va_list l, log_t *f);
 int _putchar(char c);
 int _puts(char *str);
 
-/* print_custom */
+/* custom_printss */
 int print_rot13(va_list l, log_t *f);
 int print_rev(va_list l, log_t *f);
 int print_bigS(va_list l, log_t *f);
@@ -66,4 +71,5 @@ int print_address(va_list l, log_t *f);
 
 /* print_percent */
 int print_percent(va_list l, log_t *f);
+
 #endif
