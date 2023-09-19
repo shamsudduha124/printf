@@ -1,58 +1,24 @@
-#include "main.h"
-#include <limits.h>
+#include <unistd.h>
+#include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
 
 /**
- * _printf - produces output according to a format
- * @format: format string containing the characters and the specifiers
- * Description: this function will call the get_print() function that will
- * determine which printing function to call depending on the conversion
- * specifiers contained into fmt
- * Return: length of the formatted output string
+ * _printf - Produces output according to a format
+ * @format: The format of the string.
+ * Return: The number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, log_t *);
-	const char *p;
-	va_list arguments;
-	log_t flags = {0, 0, 0};
+	unsigned int i = 0, n = 0;
 
-	register int count = 0;
-
-	va_start(arguments, format);
-	if (!format || (format[0] == '%' && !format[1]))
+	while (format[i] != 0)
 	{
-		return (-1);
+		if (format[i] == '%')
+			n++;
+		i++;
 	}
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{
-		return (-1);
-	}
-	for (p = format; *p; p++)
-	{
-		switch (*p)
-		{
-		case '%':
-			p++;
-			if (*p == '%')
-			{
-				count += _putchar('%');
-				continue;
-			}
-			while (get_flag(*p, &flags))
-			{
-				p++;
-			}
-			pfunc = get_print(*p);
-			count += (pfunc) ? pfunc(arguments, &flags) : _printf("%%%c", *p);
-			break;
-
-		default:
-			count += _putchar(*p);
-			break;
-		}
-	}
-	_putchar(-1);
-	va_end(arguments);
-	return (count);
+	write(1, format, n);
+	printf("We have %d formatters\n", n);
+	return (n);
 }
