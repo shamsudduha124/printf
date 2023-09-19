@@ -28,9 +28,8 @@ int _printf(const char *format, ...)
 	}
 	for (p = format; *p; p++)
 	{
-		switch (*p)
+		if (*p == '%')
 		{
-		case '%':
 			p++;
 			if (*p == '%')
 			{
@@ -38,18 +37,16 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			while (get_flag(*p, &flags))
-			{
 				p++;
-			}
 			pfunc = get_print(*p);
-			count += (pfunc) ? pfunc(arguments, &flags) : _printf("%%%c", *p);
-			break;
-		default:
+			count += (pfunc)
+				? pfunc(arguments, &flags)
+				: _printf("%%%c", *p);
+		} else
 			count += _putchar(*p);
-			break;
-		}
 	}
 	_putchar(-1);
 	va_end(arguments);
 	return (count);
+
 }
