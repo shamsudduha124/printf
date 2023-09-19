@@ -5,7 +5,7 @@ include "main.h"
  * @l: va_list arg from _printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf
- * Return: number of char printed
+ * Return: number of char print
  */
 int print_address(va_list l, log_t *f)
 {
