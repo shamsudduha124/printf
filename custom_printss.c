@@ -10,7 +10,7 @@
 int print_bigS(va_list l, log_t *f)
 {
 	int i, count = 0;
-	char *resultss;
+	char *res;
 	char *s = va_arg(l, char *);
 
 	(void)f;
@@ -23,10 +23,10 @@ int print_bigS(va_list l, log_t *f)
 		{
 			_puts("\\x");
 			count += 2;
-			resultss = convert(s[i], 16, 0);
-			if (!resultss[1])
+			res = convert(s[i], 16, 0);
+			if (!res[1])
 				count += _putchar('0');
-			count += _puts(resultss);
+			count += _puts(res);
 		}
 		else
 			count += _putchar(s[i]);
