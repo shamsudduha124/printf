@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_bigggS - Non printable chars
- * (0 < ASCII  < 32 or >= 127) areg
+ * print_bigS - Non printable chars
+ * (0 < ASCII  < 32 or >= 127) are
  * printed this way: \x, followegd by the ASCII code
  * value in hexadecimal (upper case - always 2 characters)
  * Return: number of char printed
@@ -35,7 +35,7 @@ int print_bigS(va_list l, log_t *f)
 }
 
 /**
- * print_rev - prints a string in reverse
+ * print_rev -prints a string in reverse
  * @l: argument from _printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf

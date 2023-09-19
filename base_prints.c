@@ -6,7 +6,6 @@
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf
  * Description: the function calls convert() which in turns converts the input
- * number into the correct base and returns it as a string
  * Return: the number of char printed
  */
 
@@ -67,7 +66,6 @@ int print_binary(va_list l, log_t *f)
  * @l: va_list arguments from _printf
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf
- * numberber into the correct base and returns it as a string
  * Return: the numberber of char printed
  */
 int print_octal(va_list l, log_t *f)
