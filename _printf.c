@@ -11,7 +11,7 @@
 =======
  * _printf - produces output according to a format
  * @format: format string containing the characters and the specifiers
- * Description: this function will call the get_print() function that will
+ * Description: this function will call the get_print() function that wil
  * specifiers contained into fmt
  * Return: length of the formatted output string
 >>>>>>> 670c1afc96bd2245cebf9ce831b68c84ac5b6e44

@@ -70,8 +70,8 @@ int print_binary(va_list l, log_t *f)
  */
 int print_octal(va_list l, log_t *f)
 {
-	unsigned int num = va_arg(l, unsigned int);
-	char *str = convert(num, 8, 0);
+	unsigned int number = va_arg(l, unsigned int);
+	char *str = convert(number, 8, 0);
 	int count = 0;
 
 	if (f->ash == 1 && str[0] != '0')
