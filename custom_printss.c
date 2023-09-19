@@ -2,7 +2,7 @@
 
 /**
  * print_bigS - Non printable chars
- * (0 < ASCII  < 32 or >= 127) are
+ * (0 < ASCII  < 32 or >= 127) ar
  * printed this way: \x, followegd by the ASCII code
  * value in hexadecimal (upper case - always 2 characters)
  * Return: number of char printed
