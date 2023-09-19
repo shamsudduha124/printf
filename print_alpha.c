@@ -14,7 +14,7 @@ int print_string(va_list l, log_t *f)
 	(void)f;
 
 	s = s ? s : "(null)";
-    return (_puts(s));
+	return (_puts(s));
 }
 
 int print_char(va_list l, log_t *f)
