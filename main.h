@@ -5,7 +5,7 @@
 #include <stdarg.h>
 
 /**
- * struct flags - Structure containing flags to enable specific formatting options
+ * struct flags - Structure containing flags to enable specific formatt opt
  * @pl: for '+'
  * @spc: for ' '
  * @ash: for '#'
