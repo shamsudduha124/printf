@@ -3,9 +3,10 @@
 /**
  * print_bigS - Non printable chars
  * (0 < ASCII  < 32 or >= 127) ar
- * printed this way: \x, followegd by the ASCII code
- * value in hexadecimal (upper case - always 2 characters)
- * Return: number of char printed
+ * Description: put f
+ * @l printed this way: \x, followegd by the ASCII code
+ * @f value in hexadecimal (upper case - always 2 characters)
+ * Return f
  */
 int print_bigS(va_list l, log_t *f)
 {
@@ -40,6 +41,10 @@ int print_bigS(va_list l, log_t *f)
  * @f: pointer to the struct flags that determines
  * if a flag is passed to _printf
  * Return: length of the printed string
+ *
+ * printf_bigS - printf str to bigS place into buffer
+ * @args: type struct va_arg where is allocated printf arguments
+ * Return: counter
  */
 int print_rev(va_list l, log_t *f)
 {

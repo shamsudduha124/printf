@@ -3,9 +3,6 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-#include <limits.h>
-#include <stdio.h>
-#include <unistd.h>
 /**
  * struct flags - Structure containing flags to enable specific formatt opt
  * @pl: for '+'
