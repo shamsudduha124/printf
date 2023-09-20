@@ -4,7 +4,7 @@
 .\"
 .\"
 .\"
-.TH _PRINTF "Oct 18 2022" "0.1" "Library functions manual"
+.TH _PRINTF "Sep 20 2023" "0.1" "Library functions manual"
 
 .SH NAME
 .SH ""
@@ -124,4 +124,4 @@ hexadecimal preceded by \x
 
 .SH "AUTHORS"
 .SH ""
-shamsudduha and busi
+ABDUSSALAM SHAMSUDDUHA and BUSI BUTHELEZI
