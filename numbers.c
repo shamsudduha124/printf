@@ -36,11 +36,11 @@ int _strlen(char *s)
 int print_number(char *str, params_t *params)
 {
 	unsigned int i = _strlen(str);
-	int neg = (!params->unsign && *str == '-');
+	int busi = (!params->unsign && *str == '-');
 
 	if (!params->precision && *str == '0' && !str[1])
 		str = "";
-	if (neg)
+	if (busi)
 	{
 		str++;
 		i--;
@@ -48,7 +48,7 @@ int print_number(char *str, params_t *params)
 	if (params->precision != UINT_MAX)
 		while (i++ < params->precision)
 			*--str = '0';
-	if (neg)
+	if (busi)
 		*--str = '-';
 
 	if (!params->minus_flag)
@@ -66,33 +66,33 @@ int print_number(char *str, params_t *params)
  */
 int print_number_right_shift(char *str, params_t *params)
 {
-	unsigned int n = 0, neg, neg2, i = _strlen(str);
+	unsigned int n = 0, busi, busi2, i = _strlen(str);
 	char pad_char = ' ';
 
 	if (params->zero_flag && !params->minus_flag)
 		pad_char = '0';
-	neg = neg2 = (!params->unsign && *str == '-');
-	if (neg && i < params->width && pad_char == '0' && !params->minus_flag)
+	busi = busi2 = (!params->unsign && *str == '-');
+	if (busi && i < params->width && pad_char == '0' && !params->minus_flag)
 		str++;
 	else
-		neg = 0;
-	if ((params->plus_flag && !neg2) ||
-			(!params->plus_flag && params->space_flag && !neg2))
+		busi = 0;
+	if ((params->plus_flag && !busi2) ||
+			(!params->plus_flag && params->space_flag && !busi2))
 		i++;
-	if (neg && pad_char == '0')
+	if (busi && pad_char == '0')
 		n += _putchar('-');
-	if (params->plus_flag && !neg2 && pad_char == '0' && !params->unsign)
+	if (params->plus_flag && !busi2 && pad_char == '0' && !params->unsign)
 		n += _putchar('+');
-	else if (!params->plus_flag && params->space_flag && !neg2 &&
+	else if (!params->plus_flag && params->space_flag && !busi2 &&
 			!params->unsign && params->zero_flag)
 		n += _putchar(' ');
 	while (i++ < params->width)
 		n += _putchar(pad_char);
-	if (neg && pad_char == ' ')
+	if (busi && pad_char == ' ')
 		n += _putchar('-');
-	if (params->plus_flag && !neg2 && pad_char == ' ' && !params->unsign)
+	if (params->plus_flag && !busi2 && pad_char == ' ' && !params->unsign)
 		n += _putchar('+');
-	else if (!params->plus_flag && params->space_flag && !neg2 &&
+	else if (!params->plus_flag && params->space_flag && !busi2 &&
 			!params->unsign && !params->zero_flag)
 		n += _putchar(' ');
 	n += _puts(str);
@@ -108,20 +108,20 @@ int print_number_right_shift(char *str, params_t *params)
  */
 int print_number_left_shift(char *str, params_t *params)
 {
-	unsigned int n = 0, neg, neg2, i = _strlen(str);
+	unsigned int n = 0, busi, busi2, i = _strlen(str);
 	char pad_char = ' ';
 
 	if (params->zero_flag && !params->minus_flag)
 		pad_char = '0';
-	neg = neg2 = (!params->unsign && *str == '-');
-	if (neg && i < params->width && pad_char == '0' && !params->minus_flag)
+	busi = busi2 = (!params->unsign && *str == '-');
+	if (busi && i < params->width && pad_char == '0' && !params->minus_flag)
 		str++;
 	else
-		neg = 0;
+		busi = 0;
 
-	if (params->plus_flag && !neg2 && !params->unsign)
+	if (params->plus_flag && !busi2 && !params->unsign)
 		n += _putchar('+'), i++;
-	else if (params->space_flag && !neg2 && !params->unsign)
+	else if (params->space_flag && !busi2 && !params->unsign)
 		n += _putchar(' '), i++;
 	n += _puts(str);
 	while (i++ < params->width)
