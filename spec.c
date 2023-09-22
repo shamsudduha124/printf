@@ -5,7 +5,6 @@
  * @s: string of the format
  * Return: the number of bytes printed
  */
-
 int (*get_specifier(char *s))(va_list ap, params_t *params)
 
 {
@@ -59,7 +58,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
 
 /**
  * get_flag - finds the flag functions
- * @s: the format string
+ * @s: the format strings
  * @params: the parameters struct
  * Return: if flag was valid
  */
@@ -117,7 +116,7 @@ int get_modifier(char *s, params_t *params)
  * @s: the format string
  * @params: the parameters struct
  * @ap: the argument pointer
- * Return: new pointer
+ * Return: new pointers
  */
 
 char *get_width(char *s, params_t *params, va_list ap)
