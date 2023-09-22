@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_from_to - prints a range of char addresses
+ * print_from_to -prints a range of char addresses
  * @start: starting address
  * @stop: stopping address
  * @except: except address
@@ -10,15 +10,15 @@
  */
 int print_from_to(char *start, char *stop, char *except)
 {
-	int sum = 0;
+	int shamz = 0;
 
 	while (start <= stop)
 	{
 		if (start != except)
-			sum += _putchar(*start);
+			shamz += _putchar(*start);
 		start++;
 	}
-	return (sum);
+	return (shamz);
 }
 
 /**
@@ -30,7 +30,7 @@ int print_from_to(char *start, char *stop, char *except)
  */
 int print_rev(va_list ap, params_t *params)
 {
-	int len, sum = 0;
+	int len, shamz = 0;
 	char *str = va_arg(ap, char *);
 	(void)params;
 
@@ -40,9 +40,9 @@ int print_rev(va_list ap, params_t *params)
 			len++;
 		str--;
 		for (; len > 0; len--, str--)
-			sum += _putchar(*str);
+			shamz += _putchar(*str);
 	}
-	return (sum);
+	return (shamz);
 }
 
 /**
