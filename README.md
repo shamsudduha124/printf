@@ -7,7 +7,7 @@
 [![printf.jpg](https://i.postimg.cc/QtBH3tmV/printf.jpg)](https://postimg.cc/S2hyLmwp)
 
 The printf function sends formatted output to stdout.
-A custom _printf() for learning purposes was developed by cohort  #8 students Nicks and Musa parsanka.
+A custom _printf() for learning purposes was developed by cohort  #13 students Busi and Abdussalam Shamsudduha.
 _printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
 These arguments are placed using the percentage '%' operator
 
@@ -239,8 +239,8 @@ Handle the following custom conversion specifier:
 16. ###### *
 All the above options work well together.
 # Disclaimer
-If you happen to use these repo we scored `158%`
+If you happen to use these repo we scored `193%`
 ### Authors &copy;
 
-- Nicks
-- Musa Parsanka
+- BUSI
+- Abdussalam SHamsudduha
