@@ -10,15 +10,15 @@
 int print_char(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
-	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
+	unsigned int pad = 1, shamz = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
-		sum += _putchar(ch);
+		shamz += _putchar(ch);
 	while (pad++ < params->width)
-		sum += _putchar(pad_char);
+		shamz += _putchar(pad_char);
 	if (!params->minus_flag)
-		sum += _putchar(ch);
-	return (sum);
+		shamz += _putchar(ch);
+	return (shamz);
 }
 
 /**
@@ -51,7 +51,7 @@ int print_int(va_list ap, params_t *params)
 int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
-	unsigned int pad = 0, sum = 0, i = 0, j;
+	unsigned int pad = 0, shamz = 0, i = 0, j;
 
 	(void)params;
 	switch ((int)(!str))
@@ -66,21 +66,21 @@ int print_string(va_list ap, params_t *params)
 		{
 			if (params->precision != UINT_MAX)
 				for (i = 0; i < pad; i++)
-					sum += _putchar(*str++);
+					shamz += _putchar(*str++);
 			else
-				sum += _puts(str);
+				shamz += _puts(str);
 		}
 		while (j++ < params->width)
-			sum += _putchar(pad_char);
+			shamz += _putchar(pad_char);
 		if (!params->minus_flag)
 		{
 			if (params->precision != UINT_MAX)
 				for (i = 0; i < pad; i++)
-					sum += _putchar(*str++);
+					shamz += _putchar(*str++);
 			else
-				sum += _puts(str);
+				shamz += _puts(str);
 		}
-		return (sum);
+		return (shamz);
 }
 
 /**
@@ -108,7 +108,7 @@ int print_S(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *);
 	char *hex;
-	int sum = 0;
+	int shamz = 0;
 
 	if ((int)(!str))
 		return (_puts(NULL_STRING));
@@ -116,17 +116,17 @@ int print_S(va_list ap, params_t *params)
 	{
 		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
-			sum += _putchar('\\');
-			sum += _putchar('x');
+			shamz += _putchar('\\');
+			shamz += _putchar('x');
 			hex = convert(*str, 16, 0, params);
 			if (!hex[1])
-				sum += _putchar('0');
-			sum += _puts(hex);
+				shamz += _putchar('0');
+			shamz += _puts(hex);
 		}
 		else
 		{
-			sum += _putchar(*str);
+			shamz += _putchar(*str);
 		}
 	}
-	return (sum);
+	return (shamz);
 }
