@@ -20,7 +20,7 @@
 #define CONVERT_UNSIGNED	2
 
 /**
- * struct parameters - parameters struct
+ * struct parameters - parameters structs
  *
  * @unsign: flag if unsigned value
  *
@@ -56,7 +56,7 @@ typedef struct parameters
 } params_t;
 
 /**
- * struct specifier - Struct token
+ * struct specifier - Struct tokens
  *
  * @specifier: format token
  * @f: The function associated
@@ -71,7 +71,7 @@ typedef struct specifier
 int _puts(char *str);
 int _putchar(int c);
 
-/* print_functions.c module */
+/* print_functions.cmodule */
 int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
